@@ -1,0 +1,377 @@
+{
+  "info": {
+    "name": "Research Opportunity Portal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "01 Create Opportunity 1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status is 201', function(){ pm.response.to.have.status(201); });",
+              "pm.collectionVariables.set('id1', pm.response.json().id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/opportunities",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Machine Learning for Crop Disease Detection\",\n  \"description\": \"Build CNN models to detect crop diseases from leaf images collected in Khyber Pakhtunkhwa.\",\n  \"research_area\": \"Artificial Intelligence\",\n  \"faculty_name\": \"Dr. Ayesha Khan\",\n  \"department\": \"Computer Science\",\n  \"required_skills\": \"Python, PyTorch, Image Processing\",\n  \"available_positions\": 2,\n  \"application_deadline\": \"2026-12-15\"\n}"
+        }
+      }
+    },
+    {
+      "name": "02 Create Opportunity 2",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status is 201', function(){ pm.response.to.have.status(201); });",
+              "pm.collectionVariables.set('id2', pm.response.json().id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/opportunities",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Low-Power IoT Sensor Networks\",\n  \"description\": \"Design energy-efficient routing for IoT sensor nodes in smart campus monitoring.\",\n  \"research_area\": \"Networks\",\n  \"faculty_name\": \"Dr. Imran Shah\",\n  \"department\": \"Electrical Engineering\",\n  \"required_skills\": \"C, Embedded Systems, LoRa\",\n  \"available_positions\": 3,\n  \"application_deadline\": \"2026-12-20\"\n}"
+        }
+      }
+    },
+    {
+      "name": "03 Create Opportunity 3",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status is 201', function(){ pm.response.to.have.status(201); });",
+              "pm.collectionVariables.set('id3', pm.response.json().id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/opportunities",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Urdu Sentiment Analysis on Social Media\",\n  \"description\": \"Create a labelled Urdu dataset and train transformer models for sentiment analysis.\",\n  \"research_area\": \"Natural Language Processing\",\n  \"faculty_name\": \"Dr. Sana Yousafzai\",\n  \"department\": \"Computer Science\",\n  \"required_skills\": \"Python, NLP, Data Annotation\",\n  \"available_positions\": 1,\n  \"application_deadline\": \"2027-01-10\"\n}"
+        }
+      }
+    },
+    {
+      "name": "04 Get All Opportunities",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status is 200', function(){ pm.response.to.have.status(200); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/opportunities",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        }
+      }
+    },
+    {
+      "name": "05 Get One Opportunity",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status is 200', function(){ pm.response.to.have.status(200); });",
+              "pm.collectionVariables.set('id1', pm.response.json().id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/opportunities/{{id1}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities",
+            "{{id1}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "06 Update Opportunity",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status is 200', function(){ pm.response.to.have.status(200); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/opportunities/{{id1}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities",
+            "{{id1}}"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Machine Learning for Crop Disease Detection (Phase 2)\",\n  \"required_skills\": \"Python, PyTorch, OpenCV\",\n  \"available_positions\": 4,\n  \"application_deadline\": \"2027-01-31\"\n}"
+        }
+      }
+    },
+    {
+      "name": "07 Close Opportunity (Open to Closed)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status is 200', function(){ pm.response.to.have.status(200); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/opportunities/{{id2}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities",
+            "{{id2}}"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Closed\"\n}"
+        }
+      }
+    },
+    {
+      "name": "08 Delete Opportunity",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status is 200', function(){ pm.response.to.have.status(200); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/opportunities/{{id3}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities",
+            "{{id3}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "09 Get Deleted Opportunity (404)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status is 404', function(){ pm.response.to.have.status(404); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/opportunities/{{id3}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities",
+            "{{id3}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "10 Invalid POST (400)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('status is 400', function(){ pm.response.to.have.status(400); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/opportunities",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "opportunities"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"\",\n  \"available_positions\": 0,\n  \"status\": \"Maybe\"\n}"
+        }
+      }
+    }
+  ]
+}
